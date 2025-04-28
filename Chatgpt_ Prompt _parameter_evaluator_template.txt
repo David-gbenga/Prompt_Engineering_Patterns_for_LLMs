@@ -1,0 +1,37 @@
+(A) Prompt : For Customer ID CZRA4MLB0P What is the total outstanding debt across all loans and credit lines and
+How much of the individual’s monthly income is allocated to debt repayment (Debt-to-Income Ratio - DTI)?
+
+✅(B)  Types of prompt to choose from 
+Few-Shot Prompt
+
+Chain-of-Thought Prompt
+
+Multi-Step Prompt
+
+
+(C) conversation_messages = [
+    ("You look through the dataset for DTI and how it affects the other variables ", "")
+]
+
+
+(D) custom_prompt_style = PromptTemplate(
+    input_variables=["question", "chat_history"],
+    template="""
+You are a helpful credit data assistant. Using the available dataset, answer the user's question thoroughly.
+
+The dataset includes fields like INCOME, DEBT, SAVINGS, CREDIT_SCORE, and other financial metrics.
+
+Respond clearly using insights from similar records. If comparisons or averages are implied, include them.
+
+Chat History:
+{chat_history}
+
+Follow Up Question: {question}
+
+Standalone Question:
+"""
+)
+
+
+Given the prompt and types of prompt to choose from , kindly re-write the prompt, custom_prompt_style and conversation_messages in the most accurate and optimised way so that i can get the best response from my credit score RAG based LLM . I would like you to use either Chain-of-Thought Prompt or Multi-Step Prompt concept to re-write the conversation_messages or prompt template
+
